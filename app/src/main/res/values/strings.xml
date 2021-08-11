@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AddLesson4</string>
+    <string name="winner">Qoyil Siz Yutdingiz...</string>
+    <string name="davomEtiw">O\'yinni davom ettirishni xohlaysizmi ?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+</resources>
