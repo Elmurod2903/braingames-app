@@ -1,8 +1,7 @@
 <resources>
-    <string name="app_name">BrainGames</string>
-    <string name="winner">Qoyil Siz Yutdingiz...</string>
-    <string name="davomEtiw">O\'yinni davom ettirishni xohlaysizmi ?</string>
+    <string name="app_name">Brain Games</string>
+    <string name="winner">Qoyil siz yutdingiz…</string>
+    <string name="davomEtiw">O\'yinni davom ettirishni xoxlaysizmi ?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-    <string name="braingames">BrainGames</string>
 </resources>

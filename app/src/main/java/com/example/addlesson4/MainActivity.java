@@ -2,15 +2,17 @@ package com.example.addlesson4;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Random;
 
@@ -62,8 +64,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             randomNumber = random.nextInt(count * count);
             item = gridLayout.getChildAt(randomNumber);
             if (item.getTag() == null) {
-                item.setBackgroundColor(selectColor);
                 item.setTag(new Object());
+                item.setBackground(ContextCompat.getDrawable(this,R.drawable.b_ground_select));
                 handler.postDelayed(new MyRunnable(item), TIME_OUT);
             } else {
                 i--;
@@ -85,16 +87,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        int items;
+        Drawable items;
         final Object object = v.getTag();
         boolean back = false;
         if (object != null) {
-            items = selectColor;
+            items = ContextCompat.getDrawable(v.getContext(),R.drawable.b_ground_select);;
             drawedCount++;
 
         } else {
             back = true;
-            items = errorColor;
+            items = ContextCompat.getDrawable(v.getContext(),R.drawable.b_ground_error);
             loves[errorCount].setImageResource(R.drawable.action_border_heart);
             errorCount++;
             if (errorCount == 3) {
@@ -110,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         }
-        v.setBackgroundColor(items);
+        v.setBackground(items);
         if (back) handler.postDelayed(new MyRunnable(v), TIME_OUT);
         if (drawedCount == selectCount) {
             drawedCount = 0;
@@ -128,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         @Override
         public void run() {
-            view.setBackgroundColor(defaultColor);
+            view.setBackground(ContextCompat.getDrawable(view.getContext(),R.drawable.b_ground_default));
         }
     }
 
